@@ -12,22 +12,12 @@ import { SharedLayout } from '../components';
 // import {fetchSearchedMovies} from './services/moviesAPI';
 
 export const App = () => {
-  // const [searchQuery, setSearchQuery] = useState('');
-  // // const [currentPage, setCurrentPage] = useState(1);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [movies, setMovies] = useState([]);
-  // const [error, setError] = useState(null);
-
-  // const showMoviesList = (movies) => {
-  //   movies.map(movie => (
-  // }
-
   return (
     <div>
-      <SharedLayout />
+      {/* <SharedLayout /> */}
 
       <Routes>
-        <Route path="goit-react-hw-05-movies/" element={<SharedLayout />}>
+        <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
           <Route path="movies" element={<Movies />} />
         </Route>
