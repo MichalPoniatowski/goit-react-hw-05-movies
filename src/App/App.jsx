@@ -1,6 +1,9 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-// import { Home } from '../pages';
+import { Home } from '../pages';
+import { Movies } from '../pages';
+import { SharedLayout } from '../components';
 // import { Movies } from './pages/Movies';
 // import { Navigation } from './Navigation';
 
@@ -21,8 +24,14 @@ export const App = () => {
 
   return (
     <div>
-      {/* <Home /> */}
-      Working
+      <SharedLayout />
+
+      <Routes>
+        <Route path="goit-react-hw-05-movies/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="movies" element={<Movies />} />
+        </Route>
+      </Routes>
     </div>
   );
 };

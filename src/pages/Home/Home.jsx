@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 // import css from './Home.module.css';
 // import { Loader, MovieList } from '../../components';
 // import { MovieList } from 'components/MovieList';
