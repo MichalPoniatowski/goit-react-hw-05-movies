@@ -1,19 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-// import css from './Home.module.css';
-// import { Loader, MovieList } from '../../components';
-// import { MovieList } from 'components/MovieList';
-// import { Loader } from '../../components/Loader/Loader';
-// import { MovieList } from '../../components/MovieList/MovieList';
 import { getTrendingMovies } from '../../services/moviesAPI';
-
 import { Loader, MovieList } from '../../components';
 
-// export const Home = () => {
-//   return <button className={css.button}>Home</button>;
-// };
-
-export const Home = () => {
+const Home = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -35,9 +25,9 @@ export const Home = () => {
 
   if (isLoading) {
     return (
-      <p>
+      <div>
         <Loader />
-      </p>
+      </div>
     );
   } else if (error) {
     return <p>Something went wrong: {error.message}</p>;
@@ -50,3 +40,5 @@ export const Home = () => {
     );
   }
 };
+
+export default Home;

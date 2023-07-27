@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getMoviesCast } from '../../services/moviesAPI';
+import { getMoviesReviews } from '../../services/moviesAPI';
 import { Loader } from '../../components';
 
-const Cast = () => {
-  const [movieCast, setMovieCast] = useState([]);
+const Reviews = () => {
+  const [movieReviews, setMovieReviews] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const { movieId } = useParams();
@@ -14,8 +14,8 @@ const Cast = () => {
     (async () => {
       setIsLoading(true);
       try {
-        const data = await getMoviesCast(movieId);
-        setMovieCast(data);
+        const data = await getMoviesReviews(movieId);
+        setMovieReviews(data);
       } catch (error) {
         setError(error);
       } finally {
@@ -28,25 +28,18 @@ const Cast = () => {
     return alert('Something went wrong');
   } else if (isLoading) {
     return <Loader />;
-  } else if (!movieCast) {
-    return <p>Sorry, no information about movie cast</p>;
+  } else if (!movieReviews) {
+    return <p>Sorry, no reviews about this movie</p>;
   } else {
+    console.log('movieReviews', movieReviews);
     return (
       <section>
-        <h3>Cast:</h3>
+        <h3>Reviews:</h3>
         <ul>
-          {movieCast.map(({ id, name, profile_path }) => (
+          {movieReviews.map(({ id, author, content }) => (
             <li key={id}>
-              <img
-                src={
-                  profile_path
-                    ? `https://image.tmdb.org/t/p/w500${profile_path}`
-                    : 'https://dummyimage.com/300x450/000/fff&text=No+image'
-                }
-                width={200}
-                alt={name}
-              />
-              <p>{name}</p>
+              <h4>Author: {author}</h4>
+              <p>{content}</p>
             </li>
           ))}
         </ul>
@@ -55,4 +48,4 @@ const Cast = () => {
   }
 };
 
-export default Cast;
+export default Reviews;

@@ -1,19 +1,23 @@
-import React from 'react';
-// import { Home } from '../pages';
-// import { Movies } from '../pages';
-import { Link, Header, Container } from './SharedLayout.styled';
+import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
-export const SharedLayout = () => {
+import { Link, Header, Container } from './SharedLayout.styled';
+import { Loader } from 'components';
+
+const SharedLayout = () => {
   return (
     <Container>
       <Header>
         <nav>
-          <Link to="goit-react-hw-05-movies/">Home</Link>
-          <Link to="goit-react-hw-05-movies/movies">Movies</Link>
+          <Link to="">Home</Link>
+          <Link to="/movies">Movies</Link>
         </nav>
       </Header>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </Container>
   );
 };
+
+export default SharedLayout;
