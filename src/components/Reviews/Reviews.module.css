@@ -1,0 +1,11 @@
+.Rewievs-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.Rewievs-text {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  padding: 5px;
+}

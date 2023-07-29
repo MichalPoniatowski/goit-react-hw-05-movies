@@ -1,4 +1,4 @@
-export * from './Button';
+export * from './BackLink';
 export * from './Cast';
 export * from './Reviews';
 export * from './Loader';

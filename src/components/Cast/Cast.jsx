@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { getMoviesCast } from '../../services/moviesAPI';
 import { Loader } from '../../components';
+import css from './Cast.module.css';
 
 const Cast = () => {
   const [movieCast, setMovieCast] = useState([]);
@@ -33,8 +34,8 @@ const Cast = () => {
   } else {
     return (
       <section>
-        <h3>Cast:</h3>
-        <ul>
+        <h3 className={css['Cast-header']}>Cast:</h3>
+        <ul className={css['Cast-item']}>
           {movieCast.map(({ id, name, profile_path }) => (
             <li key={id}>
               <img
@@ -46,7 +47,7 @@ const Cast = () => {
                 width={200}
                 alt={name}
               />
-              <p>{name}</p>
+              <p className={css['Cast-text']}>{name}</p>
             </li>
           ))}
         </ul>

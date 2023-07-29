@@ -1,0 +1,19 @@
+.BackLink {
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.BackLink:hover {
+  color: orangered;
+  border-color: orangered;
+}

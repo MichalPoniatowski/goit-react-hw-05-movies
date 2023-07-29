@@ -1,0 +1,21 @@
+.MovieDEtails {
+  display: flex;
+  gap: 20px;
+}
+
+.MovieDEtails-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.MovieDEtails-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.MovieDEtails-text {
+  font-size: 1rem;
+  padding: 5px;
+  padding-left: 45px;
+}

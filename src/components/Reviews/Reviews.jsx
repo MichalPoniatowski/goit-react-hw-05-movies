@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { getMoviesReviews } from '../../services/moviesAPI';
 import { Loader } from '../../components';
+import css from './Reviews.module.css';
 
 const Reviews = () => {
   const [movieReviews, setMovieReviews] = useState([]);
@@ -38,8 +39,8 @@ const Reviews = () => {
         <ul>
           {movieReviews.map(({ id, author, content }) => (
             <li key={id}>
-              <h4>Author: {author}</h4>
-              <p>{content}</p>
+              <h4 className={css['Rewievs-header']}>Author: {author}</h4>
+              <p className={css['Rewievs-text']}>{content}</p>
             </li>
           ))}
         </ul>
