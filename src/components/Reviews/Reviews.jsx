@@ -29,7 +29,7 @@ const Reviews = () => {
     return alert('Something went wrong');
   } else if (isLoading) {
     return <Loader />;
-  } else if (!movieReviews) {
+  } else if (movieReviews.length === 0) {
     return <p>Sorry, no reviews about this movie</p>;
   } else {
     console.log('movieReviews', movieReviews);

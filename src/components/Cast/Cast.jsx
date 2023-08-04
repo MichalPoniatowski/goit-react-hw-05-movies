@@ -29,7 +29,7 @@ const Cast = () => {
     return alert('Something went wrong');
   } else if (isLoading) {
     return <Loader />;
-  } else if (!movieCast) {
+  } else if (movieCast.length === 0) {
     return <p>Sorry, no information about movie cast</p>;
   } else {
     return (
